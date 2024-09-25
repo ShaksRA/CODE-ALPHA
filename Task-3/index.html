@@ -1,0 +1,233 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+
+    <title>mazmorra.io - roguelike & hack'n slash multiplayer browser game</title>
+
+    <meta name="description" content="Online hack'n slash multiplayer roguelike for the browser">
+    <meta name="keywords" content="mazmorraio, mazmorra, roguelike, retro, io, browser game">
+    <meta name="author" content="Endel Dreyer">
+
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, user-scalable=no">
+
+    <meta property="og:url"                content="https://mazmorra.io" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title"              content="mazmorra.io - roguelike & hack'n slash multiplayer browser game" />
+    <meta property="og:description"        content="Online hack'n slash multiplayer roguelike for the browser" />
+    <meta property="og:image"              content="https://mazmorra.io/fb-share.png" />
+
+    <!-- <base href="https://mazmorra.io" /> -->
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/icons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+    <link rel="manifest" href="images/icons/site.webmanifest">
+    <link rel="mask-icon" href="images/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="images/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#9f00a7">
+    <meta name="msapplication-TileImage" content="images/icons/mstile-144x144.png">
+    <meta name="msapplication-config" content="images/icons/browserconfig.xml">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+      window.isAdsAllowed = function() {
+        if (window.NODE_ENV === "development") { return false; }
+
+        var adsNotAllowedFor = ['kongregate.com', 'ungrounded.net', 'localhost']
+        var referrer = document.referrer;
+        for (var i = 0; i < adsNotAllowedFor.length; i++) {
+          if (referrer.indexOf(adsNotAllowedFor[i]) !== -1) {
+            return false;
+          }
+        }
+        return true;
+      }
+    </script>
+
+    <script>
+      var aiptag = aiptag || {};
+      aiptag.cmd = aiptag.cmd || [];
+      aiptag.cmd.display = aiptag.cmd.display || []; aiptag.cmd.player = aiptag.cmd.player || [];
+      // Show GDPR consent tool
+      aiptag.gdprShowConsentTool = true;
+      // If you use your own GDPR consent tool please set aiptag.gdprConsent = false; if an EU user has declined or not yet accepted marketing cookies, for users outside the EU or for users that accepted the GDPR please use aiptag.gdprConsent = true;
+
+      aiptag.cmd.player.push(function () {
+        adplayer = new aipPlayer({
+          AD_WIDTH: 960,
+          AD_HEIGHT: 540,
+          AD_FULLSCREEN: true,
+          AD_CENTERPLAYER: false,
+          LOADING_TEXT: 'loading advertisement',
+          PREROLL_ELEM: function () { return document.getElementById('preroll') },
+          AIP_COMPLETE: function () {
+            /*******************
+             ***** WARNING *****
+            *******************
+            Please do not remove the PREROLL_ELEM
+            from the page, it will be hidden automaticly.
+            If you do want to remove it use the AIP_REMOVE callback.
+            */
+            window.adPrerollComplete();
+          },
+          AIP_REMOVE: function () {
+            // Here it's save to remove the PREROLL_ELEM from the page.
+            // But it's not necessary.
+          }
+        });
+      });
+    </script>
+    <script async src="//api.adinplay.com/libs/aiptag/pub/CRR/mazmorra.io/tag.min.js"></script>
+
+  </head>
+  <body class="loading">
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <p id="font-preload">.</p>
+
+    <!-- User Feedback Link -->
+    <div class="feedback">
+      <a href="https://discord.gg/32A2kuU" target="_blank">Discord</a>
+    </div>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112311879-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-112311879-2');
+    </script>
+
+    <!-- Facebook -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3&appId=423509175166200&autoLogAppEvents=1"></script>
+
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '423509175166200', // Production
+          // appId      : '2370808886332893', // Development
+          cookie     : true,
+          xfbml      : true,
+          version    : 'v3.3'
+        });
+        FB.AppEvents.logPageView();
+      };
+
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <!-- Ad pre-roll -->
+    <div id="preroll"></div>
+
+    <section id="credentials" class="modal active">
+      <div class="fb-like" data-href="https://mazmorra.io" data-width="" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+
+      <div class="featured-source-code"><a href="https://github.com/endel/mazmorra">Source Code</a></div>
+
+      <!-- Adinplay banners -->
+      <div id='mazmorra-io_300x250' class="ad-left">
+        <script type='text/javascript'>
+          if (window.isAdsAllowed()) {
+            aiptag.cmd.display.push(function () { aipDisplayTag.display('mazmorra-io_300x250'); });
+          }
+        </script>
+      </div>
+
+      <div id='mazmorra-io_728x90' class="ad-bottom">
+        <script type='text/javascript'>
+          aiptag.cmd.display.push(function() { aipDisplayTag.display('mazmorra-io_728x90'); });
+        </script>
+      </div>
+
+      <!-- Updates! -->
+      <div class="updates">
+        <!-- <h2>(16/08/2020) Added "infinite" dungeons after level 72.</h2> -->
+        <a href="https://discord.gg/32A2kuU" target="_blank">Join Discord for Announcements</a>
+      </div>
+
+      <h1><img src="images/logo.png" alt="Mazmorra.io" /></h1>
+
+      <p class="not-loaded">Loading, please wait...</p>
+
+      <script type="plain/text" id="hero-template">
+        <li>
+          <a href="#" data-index="{index}">
+            <span class="skin" style="background-image: url({background-image}); background-position: {background-position};"></span>
+            <span class="name">{name}</span>
+            <span class="lvl">{lvl}</span>
+          </a>
+          <a href="#" data-remove="{index}">X</a>
+        </li>
+      </script>
+
+      <section class="login hidden">
+        <a href="#" class="fb-login hidden">Connect with Facebook</a>
+        <ul class="heroes"></ul>
+        <a href="#" class="new-hero">Create New Hero</a>
+      </section>
+
+      <section class="register hidden">
+        <a href="#" class="fb-login hidden">Login with Facebook</a>
+        <input type="text" name="name" maxlength="20" placeholder="Anonymous" autofocus />
+        <div>
+          <a href="#" class="register">Create hero</a>
+        </div>
+      </section>
+    </section>
+
+    <!-- <main id="game" class="wardrobe"></main> -->
+    <main id="game"></main>
+
+    <section id="chat" class="hidden">
+      <div class="messages">
+        <div class="contents"></div>
+      </div>
+      <form action="/">
+        <input type="text" placeholder="Chat" maxlength="120" />
+        <!-- <button type="submit">send</button> -->
+      </form>
+    </section>
+
+    <section id="settings" class="modal">
+      <h1>Settings</h1>
+      <p>Here are the settings!</p>
+    </section>
+
+    <script src="bundle.js?v=8"></script>
+    <script>
+      var myRequest = new Request('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', { method: 'HEAD', mode: 'no-cors' });
+
+      fetch(myRequest).then(function (response) {
+        return response;
+
+      }).then(function (response) {
+        // not blocked!
+        window.adBlock = false;
+
+      }).catch(function (e) {
+        window.adBlock = true;
+
+        // blocked!
+        var blocked = document.createElement("div");
+        blocked.classList.add("adblock");
+        blocked.innerHTML = "AdBlock may cause issues with the game.";
+        document.body.appendChild(blocked);
+      });
+    </script>
+  </body>
+</html>
