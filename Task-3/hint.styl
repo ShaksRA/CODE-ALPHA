@@ -1,0 +1,139 @@
+.hint
+  position absolute
+  display none
+  opacity 0
+  transition opacity 0.2s
+  background #cca874
+  font-size 28px
+  color #2e1100
+
+  @media only screen and (max-width: 768px)
+    font-size 20px
+
+  &:not(.bottom)
+    &::after
+      top 24px
+      bottom 0
+    &.left
+      &::before
+        top 30px
+
+  &.bottom
+    &::after
+      bottom 24px
+    &.left
+      &::before
+        bottom 18px
+
+  &::after
+    content ' '
+    position absolute
+    display block
+    background #cca874
+    width: 6px
+    height 6px
+
+  &:not(.left)
+    &::after
+      left -6px
+      height 6px
+
+  &.left
+    &::after
+      right -6px
+
+    &::before
+      content ' '
+      position absolute
+      display block
+      background #b49054
+      width: 6px
+      height 6px
+      bottom 0
+      right -12px
+
+  h2
+    color #986c1b
+    text-shadow -1px 0 #2c1800, 0 -1px #2c1800, 1px 0 #2c1800, 0px 1px #2c1800, 0px 2px #2c1800
+    font-size 1.1em
+
+    &.red
+      color #d00000
+      text-shadow -1px 0 #5c0400, 0 -1px #5c0400, 1px 0  #5c0400, 0px 1px #5c0400, 0px 2px #5c0400
+
+    &.green
+      color #7cac20
+      text-shadow -1px 0 #347004, 0 -1px #347004, 1px 0  #347004, 0px 1px #347004, 0px 2px #347004
+
+    &.blue
+      color #1c80e4
+      text-shadow -1px 0 #043478, 0 -1px #043478, 1px 0  #043478, 0px 1px #043478, 0px 2px #043478
+
+    &.purple
+      color #9848b0
+      text-shadow -1px 0 #501858, 0 -1px #501858, 1px 0  #501858, 0px 1px #501858, 0px 2px #501858
+
+  .strength
+    color #a00000
+
+  .agility
+    color #3c8008
+
+  .intelligence
+    color #185090
+
+  .gold
+    text-shadow -1px 0 #886408, 0 -1px #886408, 1px 0  #886408, 0px 1px #886408, 0px 2px #886408
+    color #fcf458
+
+  .diamond
+    text-shadow -1px 0 #002870, 0 -1px #002870, 1px 0 #002870, 0px 1px #002870, 0px 2px #002870
+    color #ced9fd
+
+  .rare
+    text-shadow -1px 0 #a57600, 0 -1px #a57600, 1px 0  #a57600, 0px 1px #a57600, 0px 2px #a57600
+    color #f5b100
+
+  .magical
+    text-shadow -1px 0 #0c4084, 0 -1px #0c4084, 1px 0 #0c4084, 0px 1px #0c4084, 0px 2px #0c4084
+    color #246098
+
+  .shortcut
+    border-radius 3px
+    background #2e1100
+    font-size 0.5em
+    padding 3px 5px
+    font-family Arial, Helvetica, sans-serif
+    color #fff
+    margin-right 2px
+    position relative
+    top -2px
+
+  p, ul
+    font-size 0.85em
+    margin 0
+
+  li
+    padding-left 0
+    margin-left 16px
+
+  img
+    image-rendering pixelated
+
+  small
+    font-size 0.82em
+    margin-left 4px
+    &.increase
+      color #3c8008
+    &.decrease
+      color #a00000
+
+  &.active
+    display inline-block
+    // width 200px
+    opacity 1
+    padding 12px 18px 12px 12px
+    -webkit-box-shadow 6px 6px 0px 0px #b49054;
+    -moz-box-shadow 6px 6px 0px 0px #b49054;
+    box-shadow 6px 6px 0px 0px #b49054;
+

@@ -1,0 +1,40 @@
+.modal
+  pointer-events none
+  position absolute
+  text-align center
+  width 100vw
+  height 100vh
+  top 0
+  bottom 0
+  right 0
+  left 0
+  transition opacity 0.2s
+  z-index -10
+
+  &.checkpoint-modal
+    padding 10vh 10vw
+    h2
+      color #986c1b
+      text-shadow -2px 0 #2c1800, 0 -2px #2c1800, 2px 0 #2c1800, 0px 3px #2c1800
+    ul
+      margin-top 1vh
+      list-style none
+      padding 1vh 1vw
+      li
+        display inline-block
+        width 60px
+        height 60px
+        background #cca874
+        color #2e1100
+        a
+          display inline-block
+
+  opacity 0
+  background rgba(0, 0, 0, 0.95)
+
+  // display none
+  &.active
+    pointer-events all
+    display block
+    opacity 1
+    z-index 10
