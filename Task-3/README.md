@@ -9,3 +9,4 @@ I've decided to make the **source code available** for mazmorra.io, for educatio
 ## LICENSE
 
 Copyright © Endel Dreyer. See [LICENSE.md](LICENSE.md) for more details.
+
