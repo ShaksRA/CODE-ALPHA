@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "outDir": "../server-compiled",
+    "target": "es6",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "allowJs": true
+  }
+}
