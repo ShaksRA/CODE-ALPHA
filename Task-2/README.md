@@ -84,7 +84,7 @@ To run the app using docker, follow the steps below:
 
 ## Project Video
 
-https://github.com/Mohitur669/Realtime-Collaborative-Code-Editor/assets/79283402/14c17cc7-d23a-4d39-8af3-ef9e9fa8ef45
+https://github.com/user-attachments/assets/864d060c-01f2-4651-84e5-8322e9b1bfa8
 
 **Note:** If you find any bugs, create an Issue [here](https://github.com/Mohitur669/Realtime-Collaborative-Code-Editor/issues). I will try to fix it as soon as possible :) <br>
 In case you want to fix it yourself, feel free to make a pull request.
