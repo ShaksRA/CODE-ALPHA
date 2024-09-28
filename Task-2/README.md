@@ -137,3 +137,5 @@ I am Rohan Agarwal, a tech geek, currently pursuing a Bachelor's in Computer Sci
 
 - [LinkedIn](https://www.linkedin.com/in/rohanagarwal2002/)
 - [GitHub](https://www.github.com/ShaksRA)
+
+## Disclaimer : The number assigned near to the file eg. App (2).css, the file will not work untill it will be saved as App.css. So remove the number after downloading to avoid problem in configuration.
